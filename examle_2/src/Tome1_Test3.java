@@ -61,5 +61,33 @@ public class Tome1_Test3 {
         for (int i=0;i<n;i++) {
             System.out.print(numbers[i] + "  ");
         }
+
+        System.out.println("\nОтсортированный массив по возрастанию");
+        for (int j=1;j<n;j++){
+            for (int i=0;i<n-j;i++){
+                if (numbers[i]>numbers[i+1]) {
+                    bubbleSortTemp=numbers[i+1];
+                    numbers[i + 1] = numbers[i];
+                    numbers[i]=bubbleSortTemp;
+                }
+            }
+        }
+        for (int i=0;i<n;i++) {
+            System.out.print(numbers[i] + "  ");
+        }
+
+        System.out.println("\nОтсортированный массив по убыванию");
+        for (int j=1;j<n;j++){
+            for (int i=0;i<n-j;i++){
+                if (numbers[i]<numbers[i+1]) {
+                    bubbleSortTemp=numbers[i];
+                    numbers[i] = numbers[i+1];
+                    numbers[i+1]=bubbleSortTemp;
+                }
+            }
+        }
+        for (int i=0;i<n;i++) {
+            System.out.print(numbers[i] + "  ");
+        }
     }
 }
