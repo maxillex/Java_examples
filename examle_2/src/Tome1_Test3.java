@@ -37,14 +37,29 @@ public class Tome1_Test3 {
         System.out.println("\nМаксимальное значение: "+max+"\nМинимальное значение: "+min);
         System.out.println("\nЧисла которые делятся на 3: ");
         for (int i=0;i<n;i++)
-            if (numbers[i] % 3 == 0) {
+            if (numbers[i] % 3 == 0&&numbers[i]!=0) {
                 System.out.print(" " + numbers[i] + " ");
             }
         System.out.println("\nЧисла которые делятся на 9: ");
         for (int i=0;i<n;i++)
-            if (numbers[i] % 9 == 0) {
+            if (numbers[i] % 9 == 0&&numbers[i]!=0) {
                 System.out.print(" " + numbers[i] + " ");
             }
-        
+        //пытаюсь изобразить сортировку пузырьком причём по модулю
+        System.out.println("\nОтсортированный массив по абсолютному значению:");
+            int bubbleSortTemp;
+            for (int j=1;j<n;j++){
+                for (int i=0;i<n-j;i++){
+                    if (Math.abs(numbers[i])>Math.abs(numbers[i+1])) {
+                        bubbleSortTemp=numbers[i+1];
+                        numbers[i + 1] = numbers[i];
+                        numbers[i]=bubbleSortTemp;
+                        //swap или что-то подобное не нашёл, пришлось использовать костыль
+                    }
+                }
+            }
+        for (int i=0;i<n;i++) {
+            System.out.print(numbers[i] + "  ");
+        }
     }
 }
